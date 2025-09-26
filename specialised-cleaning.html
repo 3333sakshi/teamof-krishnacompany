@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Specialised Cleaning — Krishna Enterprises</title>
+<meta name="description" content="Specialised cleaning services: deep cleaning, industrial cleaning, sanitisation, post-construction cleaning by Krishna Enterprises." />
+<style>
+  /* ===== Reset & Base ===== */
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#f6f9fb;
+    --card:#ffffff;
+    --accent1:#06b6d4; /* cyan */
+    --accent2:#7c3aed; /* purple */
+    --muted:#475569;
+    --glass: rgba(255,255,255,0.6);
+  }
+  body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:#0f172a; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+  a{color:inherit;text-decoration:none}
+
+  /* ===== Header ===== */
+  header{position:sticky;top:0;background:linear-gradient(90deg,var(--accent2),var(--accent1)); color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;z-index:30;box-shadow:0 6px 18px rgba(12,12,18,0.08)}
+  .brand{display:flex;gap:12px;align-items:center}
+  .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#fff 0%, rgba(255,255,255,0.15) 100%);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--accent2)}
+  .brand h1{font-size:18px;margin:0}
+  nav.desktop{display:flex;gap:18px;align-items:center}
+  nav.desktop a{font-weight:600;color:rgba(255,255,255,0.95)}
+  .hamburger{display:none;width:40px;height:40px;border-radius:8px;align-items:center;justify-content:center;cursor:pointer}
+  .hamburger div{width:22px;height:2px;background:#fff;margin:3px 0;border-radius:2px}
+
+  /* ===== Hero ===== */
+  .hero{padding:48px 20px;text-align:center;color:#fff;background:linear-gradient(180deg, rgba(124,58,237,0.9), rgba(6,182,212,0.9)); background-blend-mode:multiply}
+  .hero .wrap{max-width:1100px;margin:0 auto}
+  .hero h2{font-size:32px;margin-bottom:12px}
+  .hero p{color:rgba(255,255,255,0.92);max-width:880px;margin:0 auto 18px}
+
+  /* ===== Page layout ===== */
+  .container{max-width:1100px;margin:28px auto;padding:0 20px}
+  .section{background:var(--card);border-radius:12px;padding:22px;margin-bottom:22px;box-shadow:0 6px 20px rgba(12,12,18,0.04)}
+  .section h3{color:var(--accent2);margin-bottom:12px;text-align:center}
+  p.lead{color:var(--muted);text-align:center;margin-bottom:18px}
+
+  /* ===== service features grid ===== */
+  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .feature{padding:18px;border-radius:10px;background:linear-gradient(180deg,#ffffff,#fbfdff);box-shadow:0 6px 18px rgba(12,12,18,0.03);transition:transform .25s, box-shadow .25s;cursor:default}
+  .feature:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(12,12,18,0.08)}
+  .feature h4{color:var(--accent1);margin-bottom:8px}
+  .feature p{color:var(--muted);font-size:14px;line-height:1.5}
+
+  /* ===== gallery slider ===== */
+  .gallery{position:relative;overflow:hidden;border-radius:12px}
+  .slides{display:flex;transition:transform .6s cubic-bezier(.22,.9,.35,1)}
+  .slides img{width:100%;flex-shrink:0;height:320px;object-fit:cover}
+  .gbtn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.45);color:#fff;border:none;padding:10px;border-radius:999px;cursor:pointer}
+  .gbtn.left{left:12px} .gbtn.right{right:12px}
+  .thumbs{display:flex;gap:8px;margin-top:12px;overflow:auto;padding-bottom:4px}
+  .thumb{width:120px;height:72px;border-radius:8px;overflow:hidden;flex:0 0 auto;cursor:pointer;box-shadow:0 6px 18px rgba(12,12,18,0.06)}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .thumb.active{outline:3px solid rgba(124,58,237,0.18);transform:scale(1.02)}
+
+  /* ===== counters ===== */
+  .counters{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between}
+  .counter{flex:1 1 180px;background:linear-gradient(135deg,#f0f9ff,#fff);padding:18px;border-radius:10px;text-align:center;box-shadow:0 6px 18px rgba(12,12,18,0.03)}
+  .counter strong{display:block;font-size:28px;color:var(--accent2)}
+  .counter span{display:block;color:var(--muted);margin-top:6px;font-size:13px}
+
+  /* ===== process timeline ===== */
+  .timeline{display:grid;gap:12px}
+  .step{display:flex;gap:12px;align-items:flex-start}
+  .bullet{width:46px;height:46px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+  .step p{color:var(--muted)}
+
+  /* ===== faq ===== */
+  .faq-item{border-top:1px dashed #eef2ff;padding:12px 0;cursor:pointer}
+  .faq-item h4{display:flex;justify-content:space-between;align-items:center;font-size:15px}
+  .faq-item p{margin-top:8px;color:var(--muted);display:none}
+
+  /* ===== footer ===== */
+  footer{padding:24px;text-align:center;color:#fff;background:linear-gradient(90deg,var(--accent2),var(--accent1));border-top:1px solid rgba(255,255,255,0.06);margin-top:22px}
+  footer a{color:rgba(255,255,255,0.95);font-weight:600;margin:0 8px}
+
+  /* ===== responsive ===== */
+  @media (max-width:900px){ .hero{padding:40px 12px} .slides img{height:220px} .thumb{width:96px;height:64px} .counter{flex-basis:45%} }
+  @media (max-width:560px){ nav.desktop{display:none} .hamburger{display:flex} .counter{flex-basis:100%} .feature{padding:14px} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="logo">KE</div>
+    <div>
+      <h1>Krishna Enterprises</h1>
+      <div style="font-size:12px;opacity:.95">Specialised Cleaning</div>
+    </div>
+  </div>
+
+  <nav class="desktop" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="travel.html">Travel</a>
+    <a href="sequrity.html">Security</a>
+    <a href="housekeeping.html">Housekeeping</a>
+    <a href="corporate.html">Corporate</a>
+  </nav>
+
+  <button class="hamburger" aria-label="Open menu" onclick="toggleMobileMenu()" title="Menu">
+    <div></div><div></div><div></div>
+  </button>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <h2 id="hero-title">Specialised Cleaning & Deep Sanitisation</h2>
+      <p>Industrial-grade deep cleaning, post-construction sanitisation, carpet & upholstery restoration, pathogen disinfection, and sterile-site preparations — delivered with professional equipment and certified teams.</p>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- Overview -->
+    <article class="section" aria-labelledby="overview-title">
+      <h3 id="overview-title">Comprehensive Specialised Cleaning Services</h3>
+      <p class="lead">Our specialised cleaning division combines industry-grade equipment, eco-conscious chemicals, and trained technicians to handle the toughest jobs — from hospitals and factories to newly constructed properties and luxury hotels.</p>
+
+      <div class="features" aria-hidden="false">
+        <div class="feature">
+          <h4>Post-Construction Cleaning</h4>
+          <p>Removal of construction dust, debris, paint residues, grout cleaning, and thorough polishing to prepare spaces for handover.</p>
+        </div>
+
+        <div class="feature">
+          <h4>Deep Disinfection & Sanitisation</h4>
+          <p>Hospital-grade disinfection, fogging, and surface sanitisation protocols suitable for clinics, offices, schools and public transport.</p>
+        </div>
+
+        <div class="feature">
+          <h4>Carpet & Upholstery Restoration</h4>
+          <p>Hot water extraction, stain removal, odour neutralisation and fibre restoration using professional-grade machines.</p>
+        </div>
+
+        <div class="feature">
+          <h4>Industrial & Factory Cleaning</h4>
+          <p>Degreasing, high-pressure washing, chemical-safe surface cleaning and factory-floor degunking using safety-compliant procedures.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- gallery -->
+    <article class="section" aria-labelledby="gallery-title">
+      <h3 id="gallery-title">Gallery — Before & After</h3>
+      <p class="lead">Visuals showing transformations our teams achieve — click thumbnails to view larger images.</p>
+
+      <div class="gallery" id="gallery" aria-hidden="false">
+        <div class="slides" id="slides">
+          <img src="dustfree.png" alt="Before: dusty construction space" />
+          <img src="book.png" alt="After: polished pristine interior" />
+          <img src="save.png" alt="Carpet deep cleaned" />
+        </div>
+
+        <button class="gbtn left" aria-label="Previous" onclick="moveGallery(-1)">❮</button>
+        <button class="gbtn right" aria-label="Next" onclick="moveGallery(1)">❯</button>
+      </div>
+
+      <div class="thumbs" id="thumbs" role="list">
+        <div class="thumb active" role="listitem" onclick="jumpTo(0)"><img src="carpret.png" alt="Before"></div>
+        <div class="thumb" role="listitem" onclick="jumpTo(1)"><img src="book.png" alt="After"></div>
+        <div class="thumb" role="listitem" onclick="jumpTo(2)"><img src="save.png" alt="Carpet"></div>
+      </div>
+    </article>
+
+    <!-- counters -->
+    <article class="section" aria-labelledby="numbers-title">
+      <h3 id="numbers-title">Our Experience in Numbers</h3>
+      <p class="lead">Trusted by businesses across industries — numbers that show scale and reliability.</p>
+
+      <div class="counters" role="list">
+        <div class="counter" role="listitem">
+          <strong class="num" data-target="420">0</strong>
+          <span>Projects Completed</span>
+        </div>
+        <div class="counter" role="listitem">
+          <strong class="num" data-target="85">0</strong>
+          <span>Industrial Clients</span>
+        </div>
+        <div class="counter" role="listitem">
+          <strong class="num" data-target="12">0</strong>
+          <span>Years of Experience</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- process -->
+    <article class="section" aria-labelledby="process-title">
+      <h3 id="process-title">Our Cleaning Process</h3>
+      <p class="lead">A reproducible, safety-first workflow used on every site.</p>
+
+      <div class="timeline">
+        <div class="step">
+          <div class="bullet">1</div>
+          <div><strong>Site Assessment</strong><p>Complete walk-through and risk assessment; material & surface identification.</p></div>
+        </div>
+
+        <div class="step">
+          <div class="bullet">2</div>
+          <div><strong>Custom Plan</strong><p>Define procedure, chemicals, PPE & equipment required; schedule & manpower planning.</p></div>
+        </div>
+
+        <div class="step">
+          <div class="bullet">3</div>
+          <div><strong>Execution</strong><p>Trained teams conduct cleaning using approved machinery — from steam cleaners to high-pressure washers.</p></div>
+        </div>
+
+        <div class="step">
+          <div class="bullet">4</div>
+          <div><strong>Quality Check & Handover</strong><p>Supervisory inspection, photographic evidence, and handover certificate if needed.</p></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- faq -->
+    <article class="section" aria-labelledby="faq-title">
+      <h3 id="faq-title">Frequently Asked Questions</h3>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <h4>Do you use eco-friendly chemicals? <span>+</span></h4>
+        <p>Yes — we prioritise biodegradable and low-VOC solutions wherever possible while ensuring hospital-grade effectiveness when required.</p>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <h4>Can you clean high-rise exteriors? <span>+</span></h4>
+        <p>We coordinate with licensed high-access teams and rope-access professionals for building exteriors; all operations comply with safety norms.</p>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <h4>Do you provide post-sanitisation certificates? <span>+</span></h4>
+        <p>Yes — for corporate or healthcare clients we can provide documentation and photographic records on request.</p>
+      </div>
+    </article>
+
+    <!-- contact / info -->
+    <article class="section" aria-labelledby="contact-title">
+      <h3 id="contact-title">Contact & Coverage</h3>
+      <p class="lead">For quotations, area coverage and scheduling, contact our specialised cleaning team.</p>
+      <p style="text-align:center;color:var(--muted)"><strong>Email:</strong> info@krishna-enterprises.com &nbsp; | &nbsp; <strong>Phone:</strong> +91-XXXXXXXXXX</p>
+      <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:8px">We serve major metros and industrial zones. For bespoke contracts we travel nationwide.</p>
+    </article>
+
+  </div> <!-- /.container -->
+</main>
+
+<footer>
+  © 2025 Krishna Enterprises — Specialised Cleaning ·
+  <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+  <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+  <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+</footer>
+
+<script>
+/* ===== Mobile menu (simple, no external layout) ===== */
+function toggleMobileMenu(){
+  const nav = document.querySelector('nav.desktop');
+  // fallback: toggle display of desktop nav for very small sites (if needed)
+  if(window.innerWidth < 560){
+    const isHidden = nav.style.display === 'none' || !nav.style.display;
+    nav.style.display = isHidden ? 'flex' : 'none';
+  }
+}
+
+/* ===== Gallery slider ===== */
+let gIndex = 0;
+const slides = document.getElementById('slides');
+const slideCount = slides ? slides.children.length : 0;
+function updateGallery(){
+  slides.style.transform = `translateX(-${gIndex * 100}%)`;
+  document.querySelectorAll('.thumb').forEach((t,i)=> t.classList.toggle('active', i === gIndex));
+}
+function moveGallery(delta){
+  gIndex = (gIndex + delta + slideCount) % slideCount;
+  updateGallery();
+}
+function jumpTo(i){ gIndex = i % slideCount; updateGallery(); }
+if(slideCount > 0){ setInterval(()=> moveGallery(1), 4500); }
+
+/* ===== Counters animate when in view ===== */
+const nums = document.querySelectorAll('.num');
+let counted = false;
+function animateNums(){
+  if(counted) return;
+  const rect = document.getElementById('numbers-title') ? document.getElementById('numbers-title').getBoundingClientRect() : null;
+  if(rect && rect.top < window.innerHeight - 120){
+    nums.forEach(el => {
+      const target = +el.dataset.target;
+      let n = 0;
+      const inc = Math.max(1, Math.round(target / 120));
+      const tick = () => {
+        n += inc;
+        el.textContent = n >= target ? target : n;
+        if(n < target) requestAnimationFrame(tick);
+      };
+      tick();
+    });
+    counted = true;
+  }
+}
+window.addEventListener('scroll', animateNums);
+window.addEventListener('load', () => { updateGallery(); animateNums(); });
+
+/* ===== FAQ toggle ===== */
+function toggleFaq(el){
+  const p = el.querySelector('p');
+  const s = el.querySelector('span');
+  const isOpen = p.style.display === 'block';
+  // close others
+  document.querySelectorAll('.faq-item p').forEach(x => x.style.display = 'none');
+  document.querySelectorAll('.faq-item span').forEach(x => x.textContent = '+');
+  if(!isOpen){ p.style.display = 'block'; s.textContent = '−'; } else { p.style.display = 'none'; s.textContent = '+'; }
+}
+
+/* ===== Accessibility: keyboard navigation for thumbs ===== */
+document.getElementById('thumbs')?.addEventListener('keydown', (e)=>{
+  if(e.key === 'ArrowRight') moveGallery(1);
+  if(e.key === 'ArrowLeft') moveGallery(-1);
+});
+</script>
+</body>
+</html>
